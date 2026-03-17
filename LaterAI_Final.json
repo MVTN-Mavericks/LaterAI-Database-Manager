@@ -1,0 +1,69 @@
+{
+  "nodes": [
+    {
+      "parameters": {},
+      "type": "n8n-nodes-base.manualTrigger",
+      "typeVersion": 1,
+      "position": [
+        -224,
+        0
+      ],
+      "id": "65eef0e1-d7d6-4629-8419-a1134091067e",
+      "name": "When clicking ‘Execute workflow’"
+    },
+    {
+      "parameters": {
+        "tableId": "Student",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "Phone",
+              "fieldValue": "9818328009"
+            },
+            {
+              "fieldId": "Email",
+              "fieldValue": "tanishkagiri08@gmail.com"
+            },
+            {
+              "fieldId": "skill_tag",
+              "fieldValue": "Database Hero"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        128,
+        0
+      ],
+      "id": "2a860eff-868a-4057-88f0-f3d56204ad8b",
+      "name": "Create a row",
+      "credentials": {
+        "supabaseApi": {
+          "id": "WDcYei9fpW4lVcGp",
+          "name": "Supabase account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    }
+  ],
+  "connections": {
+    "When clicking ‘Execute workflow’": {
+      "main": [
+        [
+          {
+            "node": "Create a row",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "pinData": {},
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "cf0e70e25c10d3bfd5b30a31f90a7db88176f0c6b287d6d387b039b72fee3324"
+  }
+}
